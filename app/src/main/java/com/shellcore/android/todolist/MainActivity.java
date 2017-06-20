@@ -1,6 +1,8 @@
 package com.shellcore.android.todolist;
 
 import android.app.LoaderManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Loader;
@@ -75,5 +77,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         contentValues.put(TodoListContract.TodoEntry.COLUMN_DONE, done ? 1 : 0);
         String[] mSelectionArgs = {Integer.toString(todoID)};
         getContentResolver().update(TodoListContract.TodoEntry.CONTENT_URI, contentValues, " _ID =? ", mSelectionArgs);
+    }
+
+    private void showNotification() {
+        Notification.Builder builder = new Notification.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText("Sync resultados");
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        // NOTIFICATION_ID allows you to update the notification later on.
+        notificationManager.notify(1, builder.build());
+
     }
 }
