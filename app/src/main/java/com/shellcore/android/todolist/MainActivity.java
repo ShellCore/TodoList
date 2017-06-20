@@ -80,10 +80,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     private void showNotification() {
+        String message = BuildConfig.BASE_URL; // This String is defined in the build.gradle app file, from the flavor integration
         Notification.Builder builder = new Notification.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle(getString(R.string.app_name))
-                .setContentText("Sync resultados");
+                .setContentText(message);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         // NOTIFICATION_ID allows you to update the notification later on.

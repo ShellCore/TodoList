@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Todo List</string>
+    <string name="app_name2">Todo List</string>
     <string name="edt_add_todo_task">Add a todo task</string>
 </resources>
