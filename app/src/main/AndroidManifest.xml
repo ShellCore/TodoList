@@ -20,6 +20,10 @@
             android:name=".data.TodoProvider"
             android:authorities="com.shellcore.android.todolist"
             android:exported="false" />
+
+        <service
+            android:name=".service.TodoListService"
+            android:exported="false" />
     </application>
 
 </manifest>

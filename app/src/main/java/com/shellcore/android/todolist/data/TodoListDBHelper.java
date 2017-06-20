@@ -22,6 +22,7 @@ public class TodoListDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         final String SQL_CREATE_TODO_TABLE = createTodoTable();
+        db.execSQL(SQL_CREATE_TODO_TABLE);
     }
 
     @Override
